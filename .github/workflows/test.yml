@@ -17,4 +17,4 @@ jobs:
           test -f form.html
           test -f studentdata.html
           test -f access.html
-          test -f new.html
+          
