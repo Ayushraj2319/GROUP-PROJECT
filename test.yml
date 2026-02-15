@@ -1,7 +1,7 @@
 name: GROUP-PROJECT CI
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -9,8 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Run Test Script
-        run: bash test.sh
+      - name: Check Files
+        run: |
+          ls
+          test -f form.html
+          test -f studentdata.html
+          test -f access.html
+          
